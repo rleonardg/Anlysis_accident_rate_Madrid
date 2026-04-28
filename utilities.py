@@ -48,21 +48,22 @@ def add_zero_level_column(df, name_lvl_0):
 
 
 if __name__ == '__main__':
-    df = pd.read_excel(r'..\src\accidents_per_comunity_2017-2024\Grupo-1.-Tablas-Generales-2018.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
-    df2 = pd.read_excel(r'..\src\accidents_per_comunity_2017-2024\Grupo-1.-Tablas-Generales-2019.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
-    df3 = pd.read_excel(r'..\src\accidents_per_comunity_2017-2024\Accidentes_con_victimas_Tablas_estadisticas_2020.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
-    df4 = pd.read_excel(r'..\src\accidents_per_comunity_2017-2024\Accidentes_con_victimas_Tablas_estadisticas_2021.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
-    df5 = pd.read_excel(r'..\src\accidents_per_comunity_2017-2024\Accidentes_con_victimas_Tablas_estadisticas_2022.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
-    df6 = pd.read_excel(r'..\src\accidents_per_comunity_2017-2024\Accidentes-con-victimas-Tablas-estadisticas-2023.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
-    df7 = pd.read_excel(r'..\src\accidents_per_comunity_2017-2024\Accidentes-con-victimas-Tablas-estadisticas-2024.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    '''
+    df = pd.read_excel(r'your_path\Grupo-1.-Tablas-Generales-2018.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df2 = pd.read_excel(r'your_path\Grupo-1.-Tablas-Generales-2019.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df3 = pd.read_excel(r'your_path\Accidentes_con_victimas_Tablas_estadisticas_2020.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df4 = pd.read_excel(r'your_path\Accidentes_con_victimas_Tablas_estadisticas_2021.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df5 = pd.read_excel(r'your_path\Accidentes_con_victimas_Tablas_estadisticas_2022.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df6 = pd.read_excel(r'your_path\Accidentes-con-victimas-Tablas-estadisticas-2023.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df7 = pd.read_excel(r'your_path\Accidentes-con-victimas-Tablas-estadisticas-2024.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
 
-    population_2018 = pd.read_csv(r'..\src\population\poblacion_comunidad_2018.csv', sep=';', encoding='latin-1')
-    population_2019 = pd.read_csv(r'..\src\population\poblacion_comunidad_2019.csv', sep=';', encoding='latin-1')
-    population_2020 = pd.read_csv(r'..\src\population\poblacion_comunidad_2020.csv', sep=';', encoding='latin-1')
-    population_2021 = pd.read_csv(r'..\src\population\poblacion_comunidad_2021.csv', sep=';', encoding='latin-1')
-    population_2022 = pd.read_csv(r'..\src\population\poblacion_comunidad_2022.csv', sep=';', encoding='latin-1')
-    population_2023 = pd.read_csv(r'..\src\population\poblacion_comunidad_2023.csv', sep=';', encoding='latin-1')
-    population_2024 = pd.read_csv(r'..\src\population\poblacion_comunidad_2024.csv', sep=';', encoding='latin-1')
+    population_2018 = pd.read_csv(r'your_path\poblacion_comunidad_2018.csv', sep=';', encoding='latin-1')
+    population_2019 = pd.read_csv(r'your_path\poblacion_comunidad_2019.csv', sep=';', encoding='latin-1')
+    population_2020 = pd.read_csv(r'your_path\poblacion_comunidad_2020.csv', sep=';', encoding='latin-1')
+    population_2021 = pd.read_csv(r'your_path\poblacion_comunidad_2021.csv', sep=';', encoding='latin-1')
+    population_2022 = pd.read_csv(r'your_path\poblacion_comunidad_2022.csv', sep=';', encoding='latin-1')
+    population_2023 = pd.read_csv(r'your_path\poblacion_comunidad_2023.csv', sep=';', encoding='latin-1')
+    population_2024 = pd.read_csv(r'your_path\poblacion_comunidad_2024.csv', sep=';', encoding='latin-1')
 
     df = same_column_name(df2, df)
     df3 = same_column_name(df2, df3)
@@ -110,4 +111,4 @@ if __name__ == '__main__':
                                                     , accidents_and_population_2024])
     
     accidents_and_population_2018_2014.to_csv('accidents_and_population_2018_2014.csv')
-    
+    '''
