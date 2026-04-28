@@ -10,10 +10,13 @@ Is Madrid a safe place to drive?
 ### Report objective
 The objective of the analysis is try to identify if Madrid is a safe place to drive based on accident rate. 
 
-I try to use the data to drive awareness and show, in numerical form, the severity is the actual situation.
+I try to use the data to drive awareness and show, in numerical form, the severity of the actual situation.
 
-### What is the accident rate
-Accident rate is calculated by, 
+### What is a drive accident
+Making a bad decision behind the wheel is a decision that can affect to other people in the road. An accident
+can be caused by a poor state of the road or human decisions.
+
+In this report we analyze: General driving accidents, including those poor road conditions and human decisions.
 
 ## Analysis
 
