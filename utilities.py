@@ -1,21 +1,36 @@
 import pandas as pd
 import numpy as np
 
+
 # --------------------
-#  Data Transormation 
+#  Data Clean 
 # --------------------
+
+def drop_column(df, list_columns_to_drop):
+    for c in list_columns_to_drop:
+        df.drop(c, axis=1, inplace=True)
 
 def correct_name(df):
     # We create the correct form of the sintax
     # It works for bad column names with '\n'
-    new_column_names = [i.replace('\n', ' ') for i in df.columns.get_levels_values(1)]
+    new_column_names = [i.replace('\n', ' ') for i in df.columns.get_level_values(1)]
 
-    df.columns = pd.multiIndex.from_array([
-        df.columns.get_levels_values(0)
+    df.columns = pd.MultiIndex.from_arrays([
+        df.columns.get_level_values(0)
         , new_column_names
     ])
 
     return df
+
+def string_column_to_integer(df, column, thousands_separator):
+    df[column] = [i.replace(thousands_separator, '') for i in df[column]]
+    df[column] = pd.to_numeric(df[column])
+
+    
+
+# --------------------
+#  Data Transormation 
+# --------------------
 
 def union_dataframes_by_different_key_name(df1, df2
 ,column_to_merge_of_df1 ,column_to_merge_of_df2):
@@ -48,22 +63,21 @@ def add_zero_level_column(df, name_lvl_0):
 
 
 if __name__ == '__main__':
-    '''
-    df = pd.read_excel(r'your_path\Grupo-1.-Tablas-Generales-2018.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
-    df2 = pd.read_excel(r'your_path\Grupo-1.-Tablas-Generales-2019.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
-    df3 = pd.read_excel(r'your_path\Accidentes_con_victimas_Tablas_estadisticas_2020.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
-    df4 = pd.read_excel(r'your_path\Accidentes_con_victimas_Tablas_estadisticas_2021.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
-    df5 = pd.read_excel(r'your_path\Accidentes_con_victimas_Tablas_estadisticas_2022.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
-    df6 = pd.read_excel(r'your_path\Accidentes-con-victimas-Tablas-estadisticas-2023.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
-    df7 = pd.read_excel(r'your_path\Accidentes-con-victimas-Tablas-estadisticas-2024.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df = pd.read_excel(r'...\Grupo-1.-Tablas-Generales-2018.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df2 = pd.read_excel(r'...\Grupo-1.-Tablas-Generales-2019.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df3 = pd.read_excel(r'...\Accidentes_con_victimas_Tablas_estadisticas_2020.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df4 = pd.read_excel(r'...\Accidentes_con_victimas_Tablas_estadisticas_2021.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df5 = pd.read_excel(r'...\Accidentes_con_victimas_Tablas_estadisticas_2022.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df6 = pd.read_excel(r'...\Accidentes-con-victimas-Tablas-estadisticas-2023.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
+    df7 = pd.read_excel(r'...\Accidentes-con-victimas-Tablas-estadisticas-2024.xlsx', sheet_name='TABLA 1.1.C.A.', header=[2, 3])
 
-    population_2018 = pd.read_csv(r'your_path\poblacion_comunidad_2018.csv', sep=';', encoding='latin-1')
-    population_2019 = pd.read_csv(r'your_path\poblacion_comunidad_2019.csv', sep=';', encoding='latin-1')
-    population_2020 = pd.read_csv(r'your_path\poblacion_comunidad_2020.csv', sep=';', encoding='latin-1')
-    population_2021 = pd.read_csv(r'your_path\poblacion_comunidad_2021.csv', sep=';', encoding='latin-1')
-    population_2022 = pd.read_csv(r'your_path\poblacion_comunidad_2022.csv', sep=';', encoding='latin-1')
-    population_2023 = pd.read_csv(r'your_path\poblacion_comunidad_2023.csv', sep=';', encoding='latin-1')
-    population_2024 = pd.read_csv(r'your_path\poblacion_comunidad_2024.csv', sep=';', encoding='latin-1')
+    population_2018 = pd.read_csv(r'...\poblacion_comunidad_2018.csv', sep=';', encoding='latin-1')
+    population_2019 = pd.read_csv(r'...\poblacion_comunidad_2019.csv', sep=';', encoding='latin-1')
+    population_2020 = pd.read_csv(r'...\poblacion_comunidad_2020.csv', sep=';', encoding='latin-1')
+    population_2021 = pd.read_csv(r'...\poblacion_comunidad_2021.csv', sep=';', encoding='latin-1')
+    population_2022 = pd.read_csv(r'...\poblacion_comunidad_2022.csv', sep=';', encoding='latin-1')
+    population_2023 = pd.read_csv(r'...\poblacion_comunidad_2023.csv', sep=';', encoding='latin-1')
+    population_2024 = pd.read_csv(r'...\poblacion_comunidad_2024.csv', sep=';', encoding='latin-1')
 
     df = same_column_name(df2, df)
     df3 = same_column_name(df2, df3)
@@ -93,10 +107,10 @@ if __name__ == '__main__':
     accidents_and_population_2018 = union_dataframes_by_different_key_name(df, population_2018, ('COMUNIDAD AUTÓNOMA', 'Unnamed: 0_level_1'), ('Población', 'Comunidades y Ciudades Autónomas')) 
     accidents_and_population_2019 = union_dataframes_by_different_key_name(df2, population_2019, ('COMUNIDAD AUTÓNOMA', 'Unnamed: 0_level_1'), ('Población', 'Comunidades y Ciudades Autónomas'))
     accidents_and_population_2020 = union_dataframes_by_different_key_name(df3, population_2020, ('COMUNIDAD AUTÓNOMA', 'Unnamed: 0_level_1'), ('Población', 'Comunidades y Ciudades Autónomas'))
-    accidents_and_population_2021 = union_dataframes_by_different_key_name(df3, population_2020, ('COMUNIDAD AUTÓNOMA', 'Unnamed: 0_level_1'), ('Población', 'Comunidades y Ciudades Autónomas'))
-    accidents_and_population_2022 = union_dataframes_by_different_key_name(df3, population_2020, ('COMUNIDAD AUTÓNOMA', 'Unnamed: 0_level_1'), ('Población', 'Comunidades y Ciudades Autónomas'))
-    accidents_and_population_2023 = union_dataframes_by_different_key_name(df3, population_2020, ('COMUNIDAD AUTÓNOMA', 'Unnamed: 0_level_1'), ('Población', 'Comunidades y Ciudades Autónomas'))
-    accidents_and_population_2024 = union_dataframes_by_different_key_name(df3, population_2020, ('COMUNIDAD AUTÓNOMA', 'Unnamed: 0_level_1'), ('Población', 'Comunidades y Ciudades Autónomas'))
+    accidents_and_population_2021 = union_dataframes_by_different_key_name(df3, population_2021, ('COMUNIDAD AUTÓNOMA', 'Unnamed: 0_level_1'), ('Población', 'Comunidades y Ciudades Autónomas'))
+    accidents_and_population_2022 = union_dataframes_by_different_key_name(df3, population_2022, ('COMUNIDAD AUTÓNOMA', 'Unnamed: 0_level_1'), ('Población', 'Comunidades y Ciudades Autónomas'))
+    accidents_and_population_2023 = union_dataframes_by_different_key_name(df3, population_2023, ('COMUNIDAD AUTÓNOMA', 'Unnamed: 0_level_1'), ('Población', 'Comunidades y Ciudades Autónomas'))
+    accidents_and_population_2024 = union_dataframes_by_different_key_name(df3, population_2024, ('COMUNIDAD AUTÓNOMA', 'Unnamed: 0_level_1'), ('Población', 'Comunidades y Ciudades Autónomas'))
     
     print(accidents_and_population_2018.shape)
     print(accidents_and_population_2019.shape)
@@ -106,9 +120,22 @@ if __name__ == '__main__':
     print(accidents_and_population_2023.shape)
     print(accidents_and_population_2024.shape)
 
-    accidents_and_population_2018_2014 = pd.concat([accidents_and_population_2018, accidents_and_population_2019, accidents_and_population_2020
+    accidents_and_population_2018_2024 = pd.concat([accidents_and_population_2018, accidents_and_population_2019, accidents_and_population_2020
                                                     , accidents_and_population_2021, accidents_and_population_2022, accidents_and_population_2023
                                                     , accidents_and_population_2024])
     
-    accidents_and_population_2018_2014.to_csv('accidents_and_population_2018_2014.csv')
-    '''
+    
+    accidents_and_population_2018_2024 = correct_name(accidents_and_population_2018_2024)
+
+    columns_to_drop=[
+        ('Población', 'Comunidades y Ciudades Autónomas')
+        ,('Población', 'Tamaño de los municipios')
+        ,('Población', 'Total Nacional')
+        ,('Población', 'Provincias')
+        ,('Población', 'Sexo')
+        ]
+    drop_column(accidents_and_population_2018_2024, columns_to_drop)
+
+    string_column_to_integer(accidents_and_population_2018_2024, ('Población', 'Total'), ".")
+
+    accidents_and_population_2018_2024.to_csv('accidents_and_population_2018_2024.csv', index=False)
