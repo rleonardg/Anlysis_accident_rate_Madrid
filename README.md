@@ -3,7 +3,7 @@ Is Madrid a safe place to drive?
 
 | Requirements | Skills |
 |--------------|--------|
-| - `python3.10`<br> - `Pandas`<br> - `Numpy`<br> - `excel`<br> - `Bigquery`<br>  |  - `Data extracting`<br> - `Data cleaning and transformation`<br> - `Data wrangling`<br> - `API`<br> - `Data Anlysis` 
+| - `python3.10`<br> - `Pandas`<br> - `Numpy`<br> - `excel`<br> - `Jupyter`<br>  |  - `Data extracting`<br> - `Data cleaning and transformation`<br> - `Data wrangling`<br> - `API`<br> - `Data Anlysis` 
 
 ## Introduction
 
