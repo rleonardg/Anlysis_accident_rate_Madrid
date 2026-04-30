@@ -18,7 +18,12 @@ can be caused by a poor state of the road or human decisions.
 
 In this report we analyze: General driving accidents, including those poor road conditions and human decisions.
 
-## Analysis
+## General Analysis
+
+### Trends by road type
+<img src="https://github.com/rleonardg/Anlysis_accident_rate_Madrid/blob/main/assets/Spain_Madrid_General.png">
+<img src="https://github.com/rleonardg/Anlysis_accident_rate_Madrid/blob/main/assets/Spain_Madrid_Highways.png">
+<img src="https://github.com/rleonardg/Anlysis_accident_rate_Madrid/blob/main/assets/Spain_Madrid_City_Roads.png">
 
 
 ## Resources
