@@ -30,6 +30,9 @@ In this report we analyze: General driving accidents, including those fatalities
 <img src="https://github.com/rleonardg/Anlysis_accident_rate_Madrid/blob/main/assets/Spain_Madrid_City_Roads.png">
 5. Current values have returned to pre-pandemic levels after a slow recovery.
 
+### Breakdown by Autonomous Communities
+<img src="https://github.com/rleonardg/Anlysis_accident_rate_Madrid/blob/main/assets/Desglose por CCAA.png">
+
 ## Resources
 - [Ine](https://www.ine.es)
 - [DGT](https://www.dgt.es/inicio/)
