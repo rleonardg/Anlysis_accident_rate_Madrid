@@ -39,7 +39,7 @@ In this report we analyze: General driving accidents, including those fatalities
 
 ## Top 3 most moortality rate by vehicle type - 2024
 1. Pedestrians are the victims more deadly in a vehicle accidents, followed by bikes and other.
-2. What have in common bikes and pedestrians? They are more vulnerable vecause they are more sentisitive to impacts.
+2. What have in common bikes and pedestrians? They are more vulnerable because they are more sentisitive to impacts.
 <img src="https://github.com/rleonardg/Anlysis_accident_rate_Madrid/blob/main/assets/mortality_rate_by_vehicle_type.png">
 
 ## Resources
