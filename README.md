@@ -30,11 +30,17 @@ In this report we analyze: General driving accidents, including those fatalities
 <img src="https://github.com/rleonardg/Anlysis_accident_rate_Madrid/blob/main/assets/Spain_Madrid_City_Roads.png">
 5. Current values have returned to pre-pandemic levels after a slow recovery.
 
-### Breakdown by Autonomous Communities
+### Breakdown by Autonomous Communities and Municipalities - 2024
 1. For 2024, the number of deaths per million inhabitants in Spain stands at 36.8.
 2.  Madrid ranks first as the autonomous community with the fewest deaths per million inhabitants, with a rate of 17.83, ahead of País Vasco and comunitat Valenciana. Occupying the lowest positions are Castilla y León with a rate of 68.15, followed by Aragon and Murcia.
 3. Why do communities like Madrid have fewer accidents per million inhabitants than others? Madrid has an area of 8,028 km², which implies a proportionally smaller and more concentrated road network. Therefore, it is easier to modernize using the regional budget.
 <img src="https://github.com/rleonardg/Anlysis_accident_rate_Madrid/blob/main/assets/Desglose por CCAA.png">
+<img src="https://github.com/rleonardg/Anlysis_accident_rate_Madrid/blob/main/assets/madrid-municipios.jpg">
+
+## Top 3 most moortality rate by vehicle type - 2024
+1. Pedestrians are the victims more deadly in a vehicle accidents, followed by bikes and other.
+2. What have in common bikes and pedestrians? They are more vulnerable vecause they are more sentisitive to impacts.
+<img src="https://github.com/rleonardg/Anlysis_accident_rate_Madrid/blob/main/assets/mortality_rate_by_vehicle_type.png">
 
 ## Resources
 - [Ine](https://www.ine.es)
